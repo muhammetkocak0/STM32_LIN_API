@@ -1,6 +1,6 @@
 # Basic STM32 LIN Communication API with Checksum Calculation
 
-STM32 LIN Communication API for basic usage like unleasing the closed features of a car, reverse engineering etc. 
+STM32 LIN Communication API for basic usage like unleashing the closed features of a car, reverse engineering etc. 
 Do not forget to configure UART as LIN in CubeIDE
 
 ## Features
