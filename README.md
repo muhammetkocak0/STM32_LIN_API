@@ -8,7 +8,7 @@ Do not forget to configure UART as LIN in CubeIDE
 - **Send LIN Frames:** Transmit LIN frames over the UART interface with calculated checksum, just pass data and uart channel
 - **Process Received LIN Frames:** Extract and process data from received LIN frames.
 
-Note: Features will be added
+Note: More features will be added
 
 ## Usage
 
