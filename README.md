@@ -19,7 +19,6 @@ To use the library change the "stm32f4xx_hal.h" according to your MCU
 
 #include "stm32f4xx_hal.h" //change this 
 #include <stdint.h>
-
 ```
 
 Initialize the LIN frame structure in main.c:
