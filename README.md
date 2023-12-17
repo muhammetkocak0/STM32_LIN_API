@@ -24,7 +24,7 @@ To use the library change the "stm32f4xx_hal.h" according to your MCU
 Initialize the LIN frame structure in main.c:
 ```c
 #include "stm32_lin_frame.h"
-LIN_Frame_t BLDC_BLOWER_02_Set_Frame = {
+LIN_Frame_t BLDC_02_Set_Frame = {
     .Sync = 0x55,
     .Identifier = 0x6A,
     .Data = {0x00, 0x00, 0x50, 0x00, 0x81, 0x11, 0xC5, 0x00}
