@@ -51,6 +51,18 @@ void LIN_Process_Frame(LIN_Frame_t *LIN_Frame, uint8_t *rxData) {
         LIN_Frame->Data[i] = rxData[i + 2];
     }
 
-    // Extract checksum
-    LIN_Frame->Checksum = rxData[10];
+    // Extract received checksum
+    uint8_t receivedChecksum = rxData[10];
+
+    // Calculate checksum based on received frame
+    uint8_t calculatedChecksum = LIN_Calculate_Checksum(LIN_Frame->Identifier, LIN_Frame->Data);
+
+    // Check if the received checksum matches the calculated checksum
+    if (receivedChecksum == calculatedChecksum) {
+        LIN_Frame->Checksum = receivedChecksum;
+        // Frame is valid, further processing can be done here
+    } else {
+        // Checksum mismatch, handle error or log the issue
+        LIN_Frame->Checksum = CHECKSUM_ERROR; 
+    }
 }

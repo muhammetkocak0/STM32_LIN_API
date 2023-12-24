@@ -8,16 +8,19 @@
 #ifndef INC_STM32_SENDLINFRAME_H_
 #define INC_STM32_SENDLINFRAME_H_
 
-#include "stm32f4xx_hal.h" //change this 
+#include "stm32f4xx_hal.h" //change this
 #include <stdint.h>
 
 // LIN frame structure definition
-typedef struct {
-    uint8_t Sync;               // Sync byte of the LIN frame
-    uint8_t Identifier;         // Identifier byte of the LIN frame
-    uint8_t Data[8];            // Data bytes of the LIN frame
-    uint8_t Checksum;           // Checksum byte of the LIN frame
+typedef struct
+{
+    uint8_t Sync;       // Sync byte of the LIN frame
+    uint8_t Identifier; // Identifier byte of the LIN frame
+    uint8_t Data[8];    // Data bytes of the LIN frame
+    uint8_t Checksum;   // Checksum byte of the LIN frame
 } LIN_Frame_t;
+
+#define LIN_CHECKSUM_ERROR 0 // Indicate that the LIN frame checksum is invalid
 
 // Function to send a LIN frame
 void LIN_Send_Frame(UART_HandleTypeDef *uart_channel, LIN_Frame_t *LIN_Frame);
