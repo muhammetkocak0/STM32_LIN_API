@@ -63,6 +63,6 @@ void LIN_Process_Frame(LIN_Frame_t *LIN_Frame, uint8_t *rxData) {
         // Frame is valid, further processing can be done here
     } else {
         // Checksum mismatch, handle error or log the issue
-        LIN_Frame->Checksum = CHECKSUM_ERROR; 
+        LIN_Frame->Checksum = LIN_CHECKSUM_ERROR; 
     }
 }
